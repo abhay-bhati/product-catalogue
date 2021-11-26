@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useEffect, useState } from "react";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import AllProducts from "./components/AllProducts";
+import Analyze from "./components/Analyze";
+import Modal from "./UI/Modal";
+import { ModalContext } from "./store/modal-context";
+import Backdrop from "./UI/Backdrop";
 
 function App() {
+  const ModalCtx = useContext(ModalContext);
+  console.log(ModalCtx);
+
+  const [chartData, setChartData] = useState([]);
+
+  const chartHandler = (val) => {
+    setChartData(val);
+  };
+
+  useEffect(() => {
+    if (ModalCtx.modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [ModalCtx.modalOpen]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <AllProducts chart={chartHandler} />
+      <Analyze />
+      {ModalCtx.modalOpen && <Modal data={chartData} />}
+      {ModalCtx.modalOpen && <Backdrop />}
     </div>
   );
 }

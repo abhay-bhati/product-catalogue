@@ -1,0 +1,29 @@
+.filter {
+  margin: 0px 30px;
+}
+.filter__select {
+  padding: 10px 30px;
+  color: rgb(105, 105, 105);
+  font-size: 15px;
+  font-weight: 600;
+  outline: none;
+  border-radius: 6px;
+  border: 2px solid rgb(221, 221, 221);
+  box-shadow: 5px 5px 5px rgb(68, 68, 68);
+}
+.filter__input {
+  padding: 11px 30px;
+  border-radius: 6px;
+  outline: none;
+  border: 2px solid rgb(221, 221, 221);
+  box-shadow: 5px 5px 5px rgb(68, 68, 68);
+}
+.filter__input::placeholder {
+  font-size: 15px;
+  font-weight: 600;
+}
+@media (max-width: 800px) {
+  .filter {
+    margin: 10px 0px;
+  }
+}

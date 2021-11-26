@@ -1,0 +1,31 @@
+.modal {
+  background-color: rgb(212, 212, 212);
+  padding: 30px;
+  width: 50%;
+  height: 400px;
+  position: absolute;
+  z-index: 1000;
+  top: 120px;
+  left: 20%;
+  padding-bottom: 60px;
+  padding-top: 60px;
+  border-radius: 15px;
+  box-shadow: 7px 7px 30px black;
+}
+.modal__cross {
+  color: black;
+  font-weight: 700;
+  padding: 4px 7px;
+  border-radius: 20px;
+  float: right;
+  margin-top: -440px;
+  margin-right: -10px;
+  box-shadow: 3px 3px 10px rgb(34, 34, 34);
+  border: 1px solid rgb(44, 44, 44);
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  .modal {
+    left: 16%;
+  }
+}

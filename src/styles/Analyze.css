@@ -1,0 +1,28 @@
+.analyze {
+  background-color: rgb(5, 43, 99);
+  position: fixed;
+  top: 88%;
+  left: 85%;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 5px 7px 10px black;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .analyze {
+    left: 78%;
+  }
+}
+@media (max-width: 600px) {
+  .analyze {
+    left: 70%;
+  }
+}
+@media (max-width: 400px) {
+  .analyze {
+    left: 63%;
+  }
+}
