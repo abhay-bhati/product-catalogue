@@ -12,10 +12,8 @@ function Modal(props) {
   const [chartData, setChartData] = useState([]);
 
   const ModalCtx = useContext(ModalContext);
-  console.log(ModalCtx);
 
   const modalCloseHandler = () => {
-    console.log("modal close");
     ModalCtx.setModalOpen(false);
   };
 

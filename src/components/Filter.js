@@ -9,8 +9,6 @@ function Filter(props) {
 
   const CategoryCtx = useContext(CategoryContext);
   const ProductCtx = useContext(ProductContext);
-  console.log(CategoryCtx);
-  console.log(ProductCtx);
 
   const productSearchHandler = (event) => {
     console.log(event.target.value);
@@ -26,8 +24,6 @@ function Filter(props) {
     fetch("https://fakestoreapi.com/products/categories")
       .then((res) => {
         res.json().then((data) => {
-          console.log("hey");
-          console.log(data);
           setCategories(data);
         });
       })

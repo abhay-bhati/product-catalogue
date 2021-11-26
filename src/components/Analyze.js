@@ -4,10 +4,8 @@ import { ModalContext } from "../store/modal-context";
 
 function Analyze() {
   const ModalCtx = useContext(ModalContext);
-  console.log(ModalCtx);
 
   const modalHandler = () => {
-    console.log("modal handle");
     ModalCtx.setModalOpen(true);
   };
 

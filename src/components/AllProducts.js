@@ -15,16 +15,11 @@ function AllProducts(props) {
   const CategoryCtx = useContext(CategoryContext);
   const ProductCtx = useContext(ProductContext);
   const PieCtx = useContext(PieContext);
-  console.log(CategoryCtx);
-  console.log(ProductCtx);
-  console.log(PieCtx);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => {
         res.json().then((data) => {
-          console.log("2");
-          console.log(data);
           setProducts(data);
           setIsLoading(false);
           newPieChart.push(
@@ -41,8 +36,6 @@ function AllProducts(props) {
           newPieChart.push(
             data.filter((element) => element.category === "jewelery").length
           );
-          console.log("ehre");
-          console.log(newPieChart);
           props.chart(newPieChart);
         });
       })
@@ -50,11 +43,9 @@ function AllProducts(props) {
         throw new Error(err);
       });
   }, []);
-  console.log(products);
 
   if (CategoryCtx.categoryresult === "") {
     filteredCategory = products;
-    console.log("asdlfasdfsd");
   } else {
     filteredCategory = products.filter(
       (element) => element.category === CategoryCtx.categoryresult
@@ -63,7 +54,6 @@ function AllProducts(props) {
   filteredProducts = filteredCategory.filter((element) =>
     element.title.toLowerCase().includes(ProductCtx.productresult.toLowerCase())
   );
-  console.log(filteredProducts);
 
   return (
     <>

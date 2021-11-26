@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./App.css";
 import Navbar from "./components/Navbar";
 import AllProducts from "./components/AllProducts";
 import Analyze from "./components/Analyze";
@@ -9,8 +8,6 @@ import Backdrop from "./UI/Backdrop";
 
 function App() {
   const ModalCtx = useContext(ModalContext);
-  console.log(ModalCtx);
-
   const [chartData, setChartData] = useState([]);
 
   const chartHandler = (val) => {
