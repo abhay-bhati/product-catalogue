@@ -3,7 +3,6 @@ import SingleProduct from "./SingleProduct";
 import "../styles/AllProducts.css";
 import { CategoryContext } from "../store/category-context";
 import { ProductContext } from "../store/product-context";
-import { PieContext } from "../store/pie-context";
 
 function AllProducts(props) {
   let newPieChart = [];
@@ -14,7 +13,6 @@ function AllProducts(props) {
 
   const CategoryCtx = useContext(CategoryContext);
   const ProductCtx = useContext(ProductContext);
-  const PieCtx = useContext(PieContext);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
